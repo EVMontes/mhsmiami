@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Hospitality Solutions — Custom Restaurant Training Programs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f5f0e6;
+  --cream-dark:#ede5d2;
+  --charcoal:#1a1815;
+  --charcoal-soft:#2d2a26;
+  --gold:#9c7c3a;
+  --gold-light:#c4a05a;
+  --muted:#7a7268;
+  --white:#ffffff;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--charcoal);font-family:var(--sans);font-size:18px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s,box-shadow 0.3s}
+nav.scrolled{background:rgba(245,240,230,0.96);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(26,24,21,0.08)}
+.nav-logo{font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:0.02em;color:var(--charcoal);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.88rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--charcoal)}
+.btn-nav{font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);background:var(--charcoal);padding:0.7rem 1.6rem;border-radius:2px;text-decoration:none;transition:background 0.2s}
+.btn-nav:hover{background:var(--gold)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(156,124,58,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-eyebrow{font-size:0.82rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+.hero h1{font-family:var(--serif);font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1.05;letter-spacing:-0.01em;color:var(--charcoal);max-width:14ch;margin-bottom:2rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:50ch;line-height:1.8;margin-bottom:3rem}
+.hero-ctas{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.btn-primary{font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream);background:var(--charcoal);padding:1rem 2.5rem;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
+.btn-primary:hover{background:var(--gold);transform:translateY(-1px)}
+.btn-ghost{font-size:0.78rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:1rem 1rem;border-bottom:1px solid var(--gold-light);transition:color 0.2s}
+.btn-ghost:hover{color:var(--charcoal)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--muted);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase}
+.hero-scroll::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 1.8s ease-in-out infinite}
+@keyframes scrollLine{0%{opacity:0;transform:scaleY(0);transform-origin:top}60%{opacity:1;transform:scaleY(1)}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
+
+/* SECTION BASE */
+section{padding:7rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.container-narrow{max-width:760px;margin:0 auto}
+.section-label{font-size:0.78rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:block}
+.section-heading{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:1.5rem}
+.section-heading em{font-style:italic;color:var(--gold)}
+.section-body{font-size:1.1rem;color:var(--muted);line-height:1.85;max-width:58ch}
+.divider{width:48px;height:1px;background:var(--gold);margin:2rem 0}
+
+/* PROBLEM */
+.problem{background:var(--charcoal)}
+.problem .section-heading{color:var(--cream)}
+.problem .section-body{color:rgba(245,240,230,0.6)}
+.problem .section-label{color:var(--gold-light)}
+.problem .divider{background:var(--gold-light)}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:4rem}
+.problem-card{padding:2rem;border:1px solid rgba(245,240,230,0.08);border-radius:2px}
+.problem-card-num{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:var(--gold-light);opacity:0.5;line-height:1;margin-bottom:1rem}
+.problem-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--cream);margin-bottom:0.75rem}
+.problem-card p{font-size:1rem;color:rgba(245,240,230,0.5);line-height:1.75}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:4rem}
+.service-card{background:var(--white);padding:2.5rem;border-radius:2px;border:1px solid var(--cream-dark);position:relative;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,24,21,0.08)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold)}
+.service-icon{width:36px;height:36px;margin-bottom:1.5rem;color:var(--gold)}
+.service-card h3{font-family:var(--serif);font-size:1.45rem;font-weight:400;color:var(--charcoal);margin-bottom:0.75rem}
+.service-card p{font-size:1rem;color:var(--muted);line-height:1.78}
+
+/* HOW IT WORKS */
+.how{background:var(--cream-dark)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:5rem}
+.step{padding:2rem 2.5rem;border-left:1px solid rgba(26,24,21,0.1)}
+.step:first-child{border-left:none;padding-left:0}
+.step-num{font-family:var(--serif);font-size:4rem;font-weight:300;color:var(--gold);opacity:0.35;line-height:1;margin-bottom:1rem}
+.step h3{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--charcoal);margin-bottom:0.75rem}
+.step p{font-size:1rem;color:var(--muted);line-height:1.78}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:4rem;align-items:start}
+.pricing-card{padding:2.5rem;border:1px solid var(--cream-dark);border-radius:2px;background:var(--white);transition:transform 0.2s}
+.pricing-card:hover{transform:translateY(-3px)}
+.pricing-card.featured{background:var(--charcoal);border-color:var(--charcoal)}
+.badge{display:inline-block;font-size:0.66rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);background:rgba(156,124,58,0.1);padding:0.3rem 0.8rem;border-radius:2px;margin-bottom:1.5rem}
+.pricing-card.featured .badge{color:var(--gold-light);background:rgba(196,160,90,0.12)}
+.pricing-price{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:var(--charcoal);line-height:1;margin-bottom:0.25rem}
+.pricing-card.featured .pricing-price{color:var(--cream)}
+.pricing-note{font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem}
+.pricing-card.featured .pricing-note{color:rgba(245,240,230,0.45)}
+.pricing-card h3{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--charcoal);margin-bottom:0.5rem}
+.pricing-card.featured h3{color:var(--cream)}
+.pricing-card > p{font-size:0.95rem;color:var(--muted);line-height:1.72;margin-bottom:1.75rem}
+.pricing-card.featured > p{color:rgba(245,240,230,0.5)}
+.pricing-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.pricing-list li{font-size:0.95rem;color:var(--muted);display:flex;gap:0.5rem}
+.pricing-card.featured .pricing-list li{color:rgba(245,240,230,0.6)}
+.pricing-list li::before{content:'—';color:var(--gold);flex-shrink:0}
+.pricing-card.featured .pricing-list li::before{color:var(--gold-light)}
+
+/* CASE STUDY */
+.case-study{background:var(--charcoal);padding:7rem 2rem}
+.case-study-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.case-quote{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.45;position:relative;padding-left:2rem}
+.case-quote::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
+.case-details .section-label{color:var(--gold-light);margin-bottom:2rem}
+.case-stat{margin-bottom:1.75rem}
+.case-stat-value{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--gold-light);line-height:1}
+.case-stat-label{font-size:0.9rem;color:rgba(245,240,230,0.45);margin-top:0.2rem}
+.case-attr{font-size:0.9rem;color:rgba(245,240,230,0.35);margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid rgba(245,240,230,0.08)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-top:4rem;align-items:start}
+.contact-info h3{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--charcoal);margin-bottom:1rem}
+.contact-info p{font-size:1rem;color:var(--muted);line-height:1.78;margin-bottom:2rem}
+.contact-detail{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem}
+.contact-detail-item{display:flex;gap:0.75rem;align-items:flex-start}
+.contact-detail-item .label{font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);min-width:72px;padding-top:2px}
+.contact-detail-item .value{font-size:1rem;color:var(--charcoal)}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.4rem}
+.form-group label{font-size:0.75rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}
+.form-group input,.form-group textarea,.form-group select{background:var(--white);border:1px solid var(--cream-dark);border-radius:2px;padding:0.9rem 1rem;font-family:var(--sans);font-size:1rem;color:var(--charcoal);transition:border-color 0.2s;outline:none;width:100%;appearance:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+.form-group textarea{min-height:120px;resize:vertical}
+.btn-submit{display:inline-block;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream);background:var(--charcoal);padding:1rem 2rem;border:none;border-radius:2px;cursor:pointer;align-self:flex-start;transition:background 0.2s;font-family:var(--sans)}
+.btn-submit:hover{background:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:3rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,240,230,0.6)}
+.footer-tagline{font-family:var(--serif);font-style:italic;font-size:0.88rem;color:rgba(245,240,230,0.3)}
+.footer-copy{font-size:0.75rem;color:rgba(245,240,230,0.25)}
+
+/* FADE ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:0.12s}
+.delay-2{transition-delay:0.24s}
+.delay-3{transition-delay:0.36s}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  nav{padding:1.25rem 1.5rem}
+  .nav-links{display:none}
+  section{padding:5rem 1.5rem}
+  .case-study-inner,.contact-grid{grid-template-columns:1fr;gap:3rem}
+  .form-row{grid-template-columns:1fr}
+  footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start}
+  .step{padding:1.75rem 0;border-left:none;border-top:1px solid rgba(26,24,21,0.08)}
+  .step:first-child{border-top:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Modern <span>Hospitality</span> Solutions</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="btn-nav">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Modern Restaurant Training Programs</p>
+  <h1>The industry hasn't updated its training in <em>decades.</em></h1>
+  <p>Modern Hospitality Solutions builds custom training programs for chef-driven restaurants — from new hire onboarding to deep-dive wine education. Built by someone with 20 years on the floor.</p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary">Request a Custom Build</a>
+    <a href="#how" class="btn-ghost">See How It Works</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="container-narrow fade-in">
+      <span class="section-label">The Problem</span>
+      <h2 class="section-heading">Your staff walk out of training with <em>nothing to study.</em></h2>
+      <div class="divider"></div>
+      <p class="section-body">In most restaurants, training happens on the floor — and stops the moment the shift ends. What does your team take home? Old binders. Printed menus. Handwritten notes. That's not training. That's hoping.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card fade-in delay-1">
+        <div class="problem-card-num">01</div>
+        <h3>Hands-on only isn't enough</h3>
+        <p>Floor training builds instinct but not knowledge. Without structured materials to study outside the building, learning stops when the shift ends.</p>
+      </div>
+      <div class="problem-card fade-in delay-2">
+        <div class="problem-card-num">02</div>
+        <h3>Outdated materials everywhere</h3>
+        <p>Old binders, printed menus, handwritten notes. Most restaurant training tools haven't evolved in decades — and your team can tell.</p>
+      </div>
+      <div class="problem-card fade-in delay-3">
+        <div class="problem-card-num">03</div>
+        <h3>Turnover resets everything</h3>
+        <p>Every time someone leaves, the knowledge walks out with them. A structured program gets new hires up to speed faster — and keeps them longer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">What We Build</span>
+      <h2 class="section-heading">Training as specific as your <em>restaurant.</em></h2>
+      <div class="divider"></div>
+      <p class="section-body">Every program is built from scratch around your restaurant's culture, menu, standards, and team — not adapted from a template designed for someone else.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in delay-1">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <circle cx="18" cy="12" r="5"/>
+          <path d="M8 30 C8 24, 28 24, 28 30"/>
+        </svg>
+        <h3>New Hire Training Program</h3>
+        <p>A comprehensive onboarding system built around your restaurant's philosophy, service standards, menu, and culture. Everything a new hire needs to walk in confident — before they take their first table.</p>
+      </div>
+      <div class="service-card fade-in delay-2">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M18 4 C12 4,8 10,8 16 C8 26,18 32,18 32 C18 32,28 26,28 16 C28 10,24 4,18 4Z"/>
+          <circle cx="18" cy="16" r="3"/>
+        </svg>
+        <h3>Wine & Knowledge Training</h3>
+        <p>Deep-dive wine education built around your actual wine list — varietals, regions, producers, pairings, and the confident language to sell every bottle. Built for serious wine programs.</p>
+      </div>
+      <div class="service-card fade-in delay-3">
+        <svg class="service-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <circle cx="18" cy="18" r="12"/>
+          <path d="M18 10 V18 L23 22"/>
+          <path d="M6 18 H4 M32 18 H30 M18 6 V4"/>
+        </svg>
+        <h3>Quarterly Content Updates</h3>
+        <p>Seasonal menu changes and wine list updates reflected in your training materials — so your team is always current, confident, and ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">The Process</span>
+      <h2 class="section-heading">Built with you. <em>Not for someone else.</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-num">01</div>
+        <h3>Discovery</h3>
+        <p>We learn your restaurant inside and out — your culture, your chef's vision, your menu, your team's gaps, and what great service looks like in your dining room.</p>
+      </div>
+      <div class="step fade-in delay-1">
+        <div class="step-num">02</div>
+        <h3>Custom Build</h3>
+        <p>We build a program structured entirely around your restaurant. Every section reflects your real standards, your real menu, and your real voice — no templates, no shortcuts.</p>
+      </div>
+      <div class="step fade-in delay-2">
+        <div class="step-num">03</div>
+        <h3>Launch & Grow</h3>
+        <p>We show up in person to run the first training session with your team. Then we keep the content fresh with quarterly updates as your restaurant evolves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">Investment</span>
+      <h2 class="section-heading">Straightforward pricing. <em>Real results.</em></h2>
+      <div class="divider"></div>
+      <p class="section-body">No subscriptions. No hidden fees. You own everything we build.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card fade-in delay-1">
+        <div class="badge">Custom Build</div>
+        <div class="pricing-price">$800 – $1,500</div>
+        <div class="pricing-note">one-time fee</div>
+        <h3>Full Training Program</h3>
+        <p>A custom-built training program tailored to your restaurant — wine, service, or a full package scoped to your needs.</p>
+        <ul class="pricing-list">
+          <li>Discovery call & intake</li>
+          <li>Custom content build (2–3 weeks)</li>
+          <li>One revision round included</li>
+          <li>First training session delivered in person</li>
+          <li>Delivered in your preferred format</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured fade-in delay-2">
+        <div class="badge">Ongoing Support</div>
+        <div class="pricing-price" style="color:var(--gold-light)">$150 – $200</div>
+        <div class="pricing-note">per quarter</div>
+        <h3>Quarterly Updates</h3>
+        <p>Keep your training current as your menu and wine list evolve. The ideal ongoing add-on after your initial build.</p>
+        <ul class="pricing-list">
+          <li>Seasonal menu integration</li>
+          <li>Wine list updates & additions</li>
+          <li>1 revision round per quarter</li>
+          <li>Priority turnaround</li>
+        </ul>
+      </div>
+      <div class="pricing-card fade-in delay-3">
+        <div class="badge">Founding Partner Rate</div>
+        <div class="pricing-price">$1,000</div>
+        <div class="pricing-note">full package — new hire + wine training</div>
+        <h3>Founding Partner</h3>
+        <p>A limited rate for select Miami restaurants joining early. Get both programs — new hire training and wine education — at a reduced investment in exchange for feedback and a case study.</p>
+        <ul class="pricing-list">
+          <li>New hire training program</li>
+          <li>Wine & knowledge training</li>
+          <li>First training session in person</li>
+          <li>Quarterly updates at $100/quarter</li>
+          <li>Direct access to the founder</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="case-study">
+  <div class="case-study-inner">
+    <div class="case-quote fade-in">
+      Built from the floor, for the floor.
+      <span style="display:block;font-family:var(--sans);font-size:1rem;font-style:normal;font-weight:300;color:rgba(245,240,230,0.5);margin-top:1.5rem;line-height:1.8">Modern Hospitality Solutions wasn't built in a boardroom. It was built by someone with over 20 years in the service industry — who has spent a career on the floor learning the wine list, running the training, and understanding what it actually takes to make a team great.</span>
+    </div>
+    <div class="case-details fade-in delay-1">
+      <span class="section-label">First Program — Eating House, Miami</span>
+      <div class="case-stat">
+        <div class="case-stat-value">Eating House</div>
+        <div class="case-stat-label">Miami, FL — Shake & Bake Hospitality</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-value">1 Session</div>
+        <div class="case-stat-label">Endorsed by ownership — from the first session</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-value">Built Real</div>
+        <div class="case-stat-label">Custom-built around an actual Miami restaurant wine list</div>
+      </div>
+      <div class="case-attr">The program that started it all — born inside one of Miami's most popular kitchens.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <span class="section-label">Get Started</span>
+        <h2 class="section-heading">Let's build your <em>program</em>.</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.88rem;color:var(--muted);line-height:1.82;margin-bottom:2rem">Tell us about your restaurant and what you're looking to build. We'll follow up within 48 hours to schedule a discovery call — no commitment required.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-item">
+            <span class="label">Based in</span>
+            <span class="value">Miami, Florida</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="label">Serving</span>
+            <span class="value">Independent & Multi-Location Restaurants</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="label">Response</span>
+            <span class="value">Within 48 hours</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form fade-in delay-1">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="First Last">
+          </div>
+          <div class="form-group">
+            <label>Restaurant Name</label>
+            <input type="text" placeholder="Restaurant">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@restaurant.com">
+        </div>
+        <div class="form-group">
+          <label>What are you looking to build?</label>
+          <select>
+            <option value="">Select a program type</option>
+            <option>New Hire Training Program</option>
+            <option>Wine &amp; Knowledge Training</option>
+            <option>Full Training Package</option>
+            <option>Quarterly Updates Only</option>
+            <option>Not sure — let's talk</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us about your restaurant</label>
+          <textarea placeholder="Team size, cuisine style, what's not working with training today..."></textarea>
+        </div>
+        <button class="btn-submit" type="button">Send Inquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Modern Hospitality Solutions</div>
+  <div class="footer-tagline">Training built from the floor, for the floor.</div>
+  <div class="footer-copy">© 2026 Modern Hospitality Solutions, LLC · Miami, FL</div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive: true});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
